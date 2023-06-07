@@ -1,0 +1,32 @@
+Maximum Subarray Sum
+
+code
+#include <bits/stdc++.h>
+long long maxSubarraySum(int arr[], int n)
+{
+    /*
+        Don't write main().
+        Don't read input, it is passed as function argument.
+        No need to print anything.
+        Taking input and printing output is handled automatically.
+    */
+
+
+    int  maxSum= INT_MIN;
+    int  Sum=0;
+    for(int i=0;i<n;i++){
+        Sum = max(Sum +arr[i], arr[i]);
+        maxSum = max(maxSum,Sum);
+        if(Sum<0){
+            Sum=0;
+        }
+
+    }
+     if(maxSum<0){
+            maxSum=0;
+        }
+
+
+    return maxSum;
+
+}
